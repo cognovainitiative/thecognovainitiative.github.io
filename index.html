@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cognova Initiative | Empowering Minds</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #27ae60;
+            --text-color: #333;
+            --bg-light: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
+                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            max-width: 800px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-title .underline {
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 0 auto;
+        }
+
+        /* Mission Section */
+        .mission-box {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .mission-box p {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Objectives Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 5px solid var(--secondary-color);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 10%;
+            text-align: center;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">The Cognova Initiative</div>
+        <ul class="nav-links">
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#objectives">Objectives</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" class="cta-button" style="padding: 8px 15px;">Donate</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Empowering Lives Through Cognitive Care</h1>
+        <p>Providing awareness, accessible support, and innovative research for individuals and families navigating The Cognova Initiative challenges.</p>
+        <a href="#objectives" class="cta-button">Explore Our Impact</a>
+    </header>
+
+    <section id="mission">
+        <div class="section-title">
+            <h2>Our Mission</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="mission-box">
+            <p>"To improve the lives of individuals affected by cognitive diseases through early awareness, accessible support, innovative research, and compassionate care, while empowering families and communities with the tools to navigate The Cognova Initiative challenges."</p>
+        </div>
+    </section>
+
+    <section id="objectives" style="background-color: #edf2f7;">
+        <div class="section-title">
+            <h2>Core Objectives</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>1. Awareness & Education</h3>
+                <p>Increase understanding of Alzheimer’s, Parkinson’s, and dementia through community outreach and workshops to reduce stigma and promote detection.</p>
+            </div>
+            <div class="card">
+                <h3>2. Early Screening</h3>
+                <p>Facilitate access to screening programs and preventive care resources to identify conditions sooner and improve long-term outcomes.</p>
+            </div>
+            <div class="card">
+                <h3>3. Patient & Caregiver Support</h3>
+                <p>Provide emotional, educational, and practical support through groups, helplines, and resource networks.</p>
+            </div>
+            <div class="card">
+                <h3>4. Research & Innovation</h3>
+                <p>Support and collaborate with medical and academic institutions to advance research in diagnosis, treatment, and potential cures.</p>
+            </div>
+            <div class="card">
+                <h3>5. Access & Equity</h3>
+                <p>Ensure underserved and high-risk communities have access to The Cognova Initiative services regardless of socioeconomic status.</p>
+            </div>
+            <div class="card">
+                <h3>6. Advocacy & Policy</h3>
+                <p>Advocate for policies that improve healthcare infrastructure, funding, and protections for individuals living with cognitive diseases.</p>
+            </div>
+            <div class="card">
+                <h3>7. Community Building</h3>
+                <p>Create inclusive communities that foster dignity, independence, and quality of life for those affected by cognitive decline.</p>
+            </div>
+            <div class="card">
+                <h3>8. Strategic Partnerships</h3>
+                <p>Work with national and local organizations sharing similar missions or ideology to amplify our collective impact.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div>
+                <h3>CognovaInitiative</h3>
+                <p>Building a future where The Cognova Initiative is prioritized and support is universal.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <p><a href="#" style="color:white; text-decoration:none;">Support Groups</a></p>
+                <p><a href="#" style="color:white; text-decoration:none;">Research Portal</a></p>
+                <p><a href="#" style="color:white; text-decoration:none;">Early Screening</a></p>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <p>Email: contact@thecognovainitiative.org</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 The Cognova Initiative Organization. All rights reserved.
+        </div>
+    </footer>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"51022c0b0f624917b2df51a63f205c0f","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
