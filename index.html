@@ -1,299 +1,670 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Cognova Initiative | Empowering Minds</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #27ae60;
-            --text-color: #333;
-            --bg-light: #f4f7f6;
-            --white: #ffffff;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Cognova Initiative</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-light);
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        /* Navigation */
-        nav {
-            background: var(--white);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      color: #1f2937;
+      line-height: 1.6;
+    }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
+    .navbar {
+      width: 100%;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        .nav-links li {
-            margin-left: 20px;
-        }
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #12355b;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
 
-        .nav-links a:hover {
-            color: var(--secondary-color);
-        }
+    .logo span {
+      color: #2563eb;
+    }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
-                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1920');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            padding: 0 20px;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 15px;
+      font-weight: 600;
+    }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            max-width: 800px;
-        }
+    .nav-links a {
+      color: #374151;
+      transition: 0.2s;
+    }
 
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
+    .nav-links a:hover {
+      color: #2563eb;
+    }
 
-        .cta-button {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
+    .donate-btn {
+      background: #2563eb;
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+    }
 
-        .cta-button:hover {
-            background-color: #2980b9;
-        }
+    .hero {
+      background: linear-gradient(135deg, #eaf3ff, #ffffff);
+      padding: 90px 25px;
+    }
 
-        /* Section Styling */
-        section {
-            padding: 4rem 10%;
-        }
+    .hero-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 45px;
+    }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
+    .hero h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      color: #0f2a44;
+      margin-bottom: 22px;
+    }
 
-        .section-title h2 {
-            font-size: 2.2rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
+    .hero p {
+      font-size: 19px;
+      color: #4b5563;
+      max-width: 680px;
+      margin-bottom: 30px;
+    }
 
-        .section-title .underline {
-            width: 80px;
-            height: 4px;
-            background: var(--secondary-color);
-            margin: 0 auto;
-        }
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
-        /* Mission Section */
-        .mission-box {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-        }
+    .primary-btn,
+    .secondary-btn {
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      display: inline-block;
+    }
 
-        .mission-box p {
-            font-size: 1.4rem;
-            font-style: italic;
-            color: #555;
-            line-height: 1.8;
-        }
+    .primary-btn {
+      background: #2563eb;
+      color: white;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+    }
 
-        /* Objectives Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
+    .secondary-btn {
+      background: white;
+      color: #2563eb;
+      border: 1px solid #c7d2fe;
+    }
 
-        .card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            border-top: 5px solid var(--secondary-color);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
+    .hero-card {
+      background: white;
+      padding: 32px;
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(15, 42, 68, 0.12);
+      border: 1px solid #e5e7eb;
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+    .hero-card h3 {
+      color: #12355b;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
 
-        .card h3 {
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
+    .hero-card ul {
+      list-style: none;
+    }
 
-        /* Footer */
-        footer {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 3rem 10%;
-            text-align: center;
-        }
+    .hero-card li {
+      margin-bottom: 14px;
+      padding-left: 28px;
+      position: relative;
+      color: #4b5563;
+    }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-            text-align: left;
-        }
+    .hero-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #2563eb;
+      font-weight: bold;
+    }
 
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 1.5rem;
-            font-size: 0.9rem;
-        }
+    section {
+      padding: 80px 25px;
+    }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .nav-links { display: none; }
-        }
-    </style>
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #12355b;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #6b7280;
+      font-size: 17px;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: #4b5563;
+      margin-bottom: 16px;
+      font-size: 17px;
+    }
+
+    .stat-boxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .stat-box {
+      background: #f1f5f9;
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+      border: 1px solid #e5e7eb;
+    }
+
+    .stat-box h3 {
+      font-size: 32px;
+      color: #2563eb;
+    }
+
+    .stat-box p {
+      color: #4b5563;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 22px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 30px rgba(15, 42, 68, 0.07);
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(15, 42, 68, 0.12);
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      background: #e0ecff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      color: #12355b;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #6b7280;
+      font-size: 15.5px;
+    }
+
+    .initiatives {
+      background: white;
+    }
+
+    .video-section {
+      background: #0f2a44;
+      color: white;
+    }
+
+    .video-section .section-title h2,
+    .video-section .section-title p {
+      color: white;
+    }
+
+    .video-placeholder {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 24px;
+      padding: 60px 25px;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .play-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: white;
+      color: #2563eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 20px;
+      font-size: 34px;
+      font-weight: bold;
+    }
+
+    .testimonials {
+      background: #f8fafc;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #4b5563;
+      margin-bottom: 20px;
+    }
+
+    .person {
+      font-weight: 800;
+      color: #12355b;
+    }
+
+    .resources {
+      background: white;
+    }
+
+    .resource-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .resource-item {
+      background: #f1f5f9;
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      color: #12355b;
+    }
+
+    .resource-item span {
+      color: #2563eb;
+    }
+
+    .contact {
+      background: linear-gradient(135deg, #2563eb, #12355b);
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      font-size: 17px;
+      color: #e5e7eb;
+    }
+
+    .contact .secondary-btn {
+      background: white;
+      color: #2563eb;
+      border: none;
+    }
+
+    footer {
+      background: #071827;
+      color: #cbd5e1;
+      padding: 35px 25px;
+      text-align: center;
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 950px) {
+      .nav-container {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .hero-container,
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .section-title h2,
+      .contact h2 {
+        font-size: 30px;
+      }
+
+      .cards,
+      .resource-list,
+      .stat-boxes {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">Cognova<span>.</span></a>
 
-    <nav>
-        <div class="logo">The Cognova Initiative</div>
-        <ul class="nav-links">
-            <li><a href="#mission">Mission</a></li>
-            <li><a href="#objectives">Objectives</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#" class="cta-button" style="padding: 8px 15px;">Donate</a></li>
-        </ul>
-    </nav>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#who-we-are">Who We Are</a>
+        <a href="#support">Support Groups & Events</a>
+        <a href="#initiatives">Initiatives</a>
+        <a href="#videos">Videos</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact" class="donate-btn">Donate</a>
+      </nav>
+    </div>
+  </header>
 
-    <header class="hero">
-        <h1>Empowering Lives Through Cognitive Care</h1>
-        <p>Providing awareness, accessible support, and innovative research for individuals and families navigating The Cognova Initiative challenges.</p>
-        <a href="#objectives" class="cta-button">Explore Our Impact</a>
-    </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <div>
+          <h1>Empowering Minds. Supporting Families. Advancing Cognitive Care.</h1>
+          <p>
+            The Cognova Initiative raises awareness, supports caregivers, and connects families with helpful resources for Alzheimer’s, dementia, Parkinson’s, and other cognitive conditions.
+          </p>
 
-    <section id="mission">
-        <div class="section-title">
-            <h2>Our Mission</h2>
-            <div class="underline"></div>
+          <div class="hero-buttons">
+            <a href="#support" class="primary-btn">Get Support</a>
+            <a href="#who-we-are" class="secondary-btn">Learn More</a>
+          </div>
         </div>
-        <div class="mission-box">
-            <p>"To improve the lives of individuals affected by cognitive diseases through early awareness, accessible support, innovative research, and compassionate care, while empowering families and communities with the tools to navigate The Cognova Initiative challenges."</p>
+
+        <div class="hero-card">
+          <h3>What We Focus On</h3>
+          <ul>
+            <li>Cognitive health education</li>
+            <li>Caregiver support groups</li>
+            <li>Community awareness events</li>
+            <li>Early screening resources</li>
+            <li>Youth volunteer involvement</li>
+          </ul>
         </div>
+      </div>
     </section>
 
-    <section id="objectives" style="background-color: #edf2f7;">
+    <section class="about" id="who-we-are">
+      <div class="container">
         <div class="section-title">
-            <h2>Core Objectives</h2>
-            <div class="underline"></div>
+          <h2>Who We Are</h2>
+          <p>We are a community focused nonprofit initiative built around education, compassion, and support.</p>
         </div>
-        <div class="grid">
-            <div class="card">
-                <h3>1. Awareness & Education</h3>
-                <p>Increase understanding of Alzheimer’s, Parkinson’s, and dementia through community outreach and workshops to reduce stigma and promote detection.</p>
+
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              The Cognova Initiative is dedicated to helping families understand cognitive conditions and feel less alone during difficult moments. Our goal is to make information easier to access and support easier to find.
+            </p>
+            <p>
+              Through awareness campaigns, support groups, educational videos, and community partnerships, we work to create a stronger support system for patients, caregivers, and families.
+            </p>
+          </div>
+
+          <div class="stat-boxes">
+            <div class="stat-box">
+              <h3>4+</h3>
+              <p>Core Programs</p>
             </div>
-            <div class="card">
-                <h3>2. Early Screening</h3>
-                <p>Facilitate access to screening programs and preventive care resources to identify conditions sooner and improve long-term outcomes.</p>
+            <div class="stat-box">
+              <h3>100%</h3>
+              <p>Community Focused</p>
             </div>
-            <div class="card">
-                <h3>3. Patient & Caregiver Support</h3>
-                <p>Provide emotional, educational, and practical support through groups, helplines, and resource networks.</p>
+            <div class="stat-box">
+              <h3>24/7</h3>
+              <p>Resource Access</p>
             </div>
-            <div class="card">
-                <h3>4. Research & Innovation</h3>
-                <p>Support and collaborate with medical and academic institutions to advance research in diagnosis, treatment, and potential cures.</p>
+            <div class="stat-box">
+              <h3>1</h3>
+              <p>Mission to Support</p>
             </div>
-            <div class="card">
-                <h3>5. Access & Equity</h3>
-                <p>Ensure underserved and high-risk communities have access to The Cognova Initiative services regardless of socioeconomic status.</p>
-            </div>
-            <div class="card">
-                <h3>6. Advocacy & Policy</h3>
-                <p>Advocate for policies that improve healthcare infrastructure, funding, and protections for individuals living with cognitive diseases.</p>
-            </div>
-            <div class="card">
-                <h3>7. Community Building</h3>
-                <p>Create inclusive communities that foster dignity, independence, and quality of life for those affected by cognitive decline.</p>
-            </div>
-            <div class="card">
-                <h3>8. Strategic Partnerships</h3>
-                <p>Work with national and local organizations sharing similar missions or ideology to amplify our collective impact.</p>
-            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <footer id="contact">
-        <div class="footer-grid">
-            <div>
-                <h3>CognovaInitiative</h3>
-                <p>Building a future where The Cognova Initiative is prioritized and support is universal.</p>
-            </div>
-            <div>
-                <h4>Quick Links</h4>
-                <p><a href="#" style="color:white; text-decoration:none;">Support Groups</a></p>
-                <p><a href="#" style="color:white; text-decoration:none;">Research Portal</a></p>
-                <p><a href="#" style="color:white; text-decoration:none;">Early Screening</a></p>
-            </div>
-            <div>
-                <h4>Connect</h4>
-                <p>Email: contact@thecognovainitiative.org</p>
-                <p>Phone: (555) 123-4567</p>
-            </div>
+    <section id="support">
+      <div class="container">
+        <div class="section-title">
+          <h2>Support Groups & Events</h2>
+          <p>Our programs give caregivers, families, and community members a safe place to learn, connect, and share.</p>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 The Cognova Initiative Organization. All rights reserved.
-        </div>
-    </footer>
 
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"51022c0b0f624917b2df51a63f205c0f","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+        <div class="cards">
+          <div class="card">
+            <div class="card-icon">🤝</div>
+            <h3>Caregiver Support Circles</h3>
+            <p>Monthly meetings where caregivers can share experiences, learn coping strategies, and receive encouragement.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🧠</div>
+            <h3>Cognitive Health Workshops</h3>
+            <p>Educational sessions about memory care, early warning signs, brain health, and prevention habits.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">📅</div>
+            <h3>Community Events</h3>
+            <p>Local outreach events that spread awareness, reduce stigma, and connect families to support resources.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="initiatives" id="initiatives">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Initiatives</h2>
+          <p>We create programs that make cognitive health support more understandable, accessible, and community driven.</p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-icon">🔎</div>
+            <h3>Early Screening Access</h3>
+            <p>Helping communities learn about early detection and encouraging families to seek support sooner.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">📘</div>
+            <h3>Caregiver Education</h3>
+            <p>Providing families with simple tools for daily care, communication, patience, and emotional support.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🌱</div>
+            <h3>Youth Awareness Campaign</h3>
+            <p>Encouraging students and young volunteers to become advocates for cognitive health awareness.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section" id="videos">
+      <div class="container">
+        <div class="section-title">
+          <h2>Videos</h2>
+          <p>Watch educational videos, caregiver stories, and highlights from Cognova community events.</p>
+        </div>
+
+        <div class="video-placeholder">
+          <div class="play-circle">▶</div>
+          <h3>Featured Video Coming Soon</h3>
+          <p>Add your YouTube or uploaded video here to share your mission with visitors.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <h2>Testimonials</h2>
+          <p>Stories from families, caregivers, and community members who have been impacted by support and education.</p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <p class="quote">“The Cognova Initiative helped my family understand what my grandmother was going through. We finally felt supported instead of confused.”</p>
+            <p class="person">Family Member</p>
+          </div>
+
+          <div class="card">
+            <p class="quote">“The caregiver resources made a real difference in how we handled daily challenges at home.”</p>
+            <p class="person">Caregiver</p>
+          </div>
+
+          <div class="card">
+            <p class="quote">“This initiative makes cognitive health easier to understand for students and families.”</p>
+            <p class="person">Community Volunteer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="resources" id="resources">
+      <div class="container">
+        <div class="section-title">
+          <h2>Resources</h2>
+          <p>Helpful guides for families, caregivers, students, and anyone wanting to learn more about cognitive health.</p>
+        </div>
+
+        <div class="resource-list">
+          <a href="#" class="resource-item">Understanding Dementia <span>→</span></a>
+          <a href="#" class="resource-item">Caregiver Checklist <span>→</span></a>
+          <a href="#" class="resource-item">Early Warning Signs <span>→</span></a>
+          <a href="#" class="resource-item">Brain Health Tips <span>→</span></a>
+          <a href="#" class="resource-item">Local Support Services <span>→</span></a>
+          <a href="#" class="resource-item">Emergency Planning Guide <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>Support the Mission</h2>
+        <p>
+          Your support helps us create more resources, host community events, and reach families who need guidance during difficult times.
+        </p>
+        <a href="mailto:thecognovainitiative@gmail.com" class="secondary-btn">Contact Us</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>The Cognova Initiative</strong></p>
+    <p>Empowering families through cognitive health awareness, education, and compassionate support.</p>
+    <p>© 2026 The Cognova Initiative. All rights reserved.</p>
+  </footer>
 </body>
 </html>
